@@ -1,23 +1,56 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { loginStudent, reset } from '../redux/studentAuthSlice'
+import loadingGif from '../assets/images/loading2.gif'
+import { toast } from 'react-toastify'
 
 const Home = () => {
+    const [email, setEmail] = useState("igboekwulusifranklin@gmail.com");
+    const [password, setPassword] = useState("123456")
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const { studentData, isLoading, isSuccess, isError, message } = useSelector(state => state.studentAuth)
+
+    useEffect(() => {
+        if (isError) {
+            toast.error("error")
+        }
+
+        if (isSuccess || studentData) {
+            navigate('/dashboard')
+        }
+
+        dispatch(reset())
+
+    }, [studentData, message, dispatch, navigate, isSuccess, isError,])
+
+    const handleStudentLogin = (e) => {
+        e.preventDefault();
+        dispatch(loginStudent({
+            email, password
+        }))
+    }
+
     return (
         <div id="signupmodal">
-            <div class="loaderContainer">
-                <img src="/images/loading2.gif" alt="" class="loadingGif" />
-            </div>
-            <div class="error">
-                <p>Please Validate all fields</p>
-                <i class="ri-close-circle-line closeErrorModal"></i>
-            </div>
+            {isLoading ? (
+                <div className="loaderContainer">
+                    <img src={loadingGif} alt="" className="loadingGif" />
+                </div>) :
+                // (<div className="error">
+                //     <p>Please Validate all fields</p>
+                //     <i className="ri-close-circle-line closeErrorModal"></i>
+                // </div>)
 
-            <form class="singInForm">
-                <i class="ri-close-circle-line closeModal"></i>
-                <input type="text" class="email" name="email" placeholder="Email" />
-                <input type="password" class="email pass" name="password" placeholder="Password" />
-                <input type="submit" value="Sign In" class="signup" />
-                <p class="mt-1 signUpText">Don't have an accout? <span>Sign up</span></p>
-            </form>
+                (<form className="singInForm" onSubmit={handleStudentLogin}>
+                    <i className="ri-close-circle-line closeModal"></i>
+                    <input type="text" className="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
+                    <input type="password" className="email pass" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <input type="submit" value="Sign In" className="signup" />
+                </form>)
+            }
         </div>
     )
 }

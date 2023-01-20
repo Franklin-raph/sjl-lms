@@ -39,9 +39,6 @@ ul {
   align-items: center;
   flex-direction: column;
   z-index: 10;
-  /* opacity: 0; */
-  /* visibility: hidden; */
-  pointer-events: none;
   transition: all 0.3s;
 }
 
@@ -58,7 +55,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  /* display: none; */
 }
 
 #signupmodal .loaderContainer .loadingGif {
@@ -177,4 +174,75 @@ ul {
 
 #signupmodal form .pass {
   margin-top: 20px;
+}
+
+@media screen and (max-width: 992px) {
+
+  #signupmodal .verifyEmailModal,
+  #signupmodal .error {
+    width: 50%;
+  }
+
+  #signupmodal .loaderContainer .loadingGif {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  #signupmodal .loaderContainer .loadingGif {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #signupmodal form {
+    width: 85%;
+  }
+
+  #signupmodal form .names input {
+    width: 180px;
+  }
+
+  #signupmodal form .email {
+    width: 380px;
+  }
+
+  #signupmodal .verifyEmailModal,
+  #signupmodal .error {
+    width: 70%;
+  }
+
+  #signupmodal .loaderContainer .loadingGif {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  #signupmodal form {
+    padding: 3rem 1rem;
+  }
+
+  #signupmodal form .names {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #signupmodal form .names input {
+    width: 100%;
+  }
+
+  #signupmodal form .email {
+    width: 100%;
+  }
+
+  #signupmodal .verifyEmailModal,
+  #signupmodal .error {
+    width: 90%;
+  }
+
+  #signupmodal .loadingGif {
+    width: 100%;
+  }
 }
