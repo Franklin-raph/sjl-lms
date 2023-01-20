@@ -26,10 +26,11 @@ ul {
   list-style: none;
 }
 
-.homeBg {}
-
 #signupmodal {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/images/bg.webp');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/images/bg1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -118,6 +119,7 @@ ul {
   flex-direction: column;
   padding: 3rem;
   position: relative;
+  border-radius: 7px;
 }
 
 #signupmodal form .signInText span,
