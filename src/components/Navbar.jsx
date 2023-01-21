@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { logoutStudent, reset } from '../redux/studentAuthSlice'
 
-const Dashboard = () => {
+const Navbar = () => {
+
     const { studentData, isLoading, isSuccess, isError, message } = useSelector(state => state.studentAuth)
     const dispatch = useDispatch()
     const naviate = useNavigate()
@@ -20,12 +22,17 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
-            <h2>Dashboard</h2>
-            <button>Not</button>
-            <input type="text" />
-        </div>
+        <nav className="navbar navbar-light ">
+            <div>
+                <i className="ri-code-box-fill"></i>
+                <Link to='/'>Scholars</Link>
+            </div>
+            <div>
+                <i className="ri-notification-4-fill"></i>
+                <button onClick={handleStudentLogout}>Logout</button>
+            </div>
+        </nav>
     )
 }
 
-export default Dashboard
+export default Navbar
