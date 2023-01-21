@@ -15,10 +15,13 @@ const Home = () => {
 
     useEffect(() => {
         if (isError) {
-            toast.error("error")
+            toast.error("Invalid login credentials !!!!")
         }
 
         if (studentData === false) {
+            toast.error("Invalid login credentials", {
+                toastId: "1234"
+            })
             navigate('/')
         }
 
@@ -28,7 +31,7 @@ const Home = () => {
 
         dispatch(reset())
 
-    }, [studentData, message, dispatch, navigate, isSuccess, isError,])
+    }, [studentData, message, dispatch, navigate, isSuccess, isError])
 
     const handleStudentLogin = (e) => {
         e.preventDefault();
