@@ -18,6 +18,10 @@ const Home = () => {
             toast.error("error")
         }
 
+        if (studentData === false) {
+            navigate('/')
+        }
+
         if (isSuccess || studentData) {
             navigate('/dashboard')
         }

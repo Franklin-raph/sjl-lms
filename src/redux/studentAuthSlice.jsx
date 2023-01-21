@@ -22,7 +22,7 @@ export const loginStudent = createAsyncThunk(
         const data = await response.json();
         if (!response.ok) {
             console.log(data);
-            return { data }
+            return false
         }
         if (response.ok) {
             localStorage.setItem('student', JSON.stringify(data))
