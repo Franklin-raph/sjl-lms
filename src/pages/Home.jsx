@@ -52,7 +52,6 @@ const Home = () => {
                 // </div>)
 
                 (<form className="singInForm" onSubmit={handleStudentLogin}>
-                    <i className="ri-close-circle-line closeModal"></i>
                     <input type="text" className="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
                     <input type="password" className="email pass" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
                     <input type="submit" value="Sign In" className="signup" />
