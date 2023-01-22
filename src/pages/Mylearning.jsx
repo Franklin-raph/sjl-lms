@@ -12,7 +12,9 @@ const Mylearning = () => {
     }, [])
 
     return (
-        <div>Mylearning</div>
+        <div>
+            <h1>Mylearning</h1>
+        </div>
     )
 }
 

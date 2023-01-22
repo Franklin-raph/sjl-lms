@@ -20,7 +20,7 @@ function App() {
     <>
       <Router>
         {studentData ? <Navbar /> : ""}
-        <div className="container">
+        <div className="main-container">
           <div className="sidebar">
             <Sidebar />
           </div>
