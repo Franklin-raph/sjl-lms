@@ -14,10 +14,10 @@ const Dashboard = () => {
         }
     }, [])
 
-    function handleStudentLogout() {
-        dispatch(logoutStudent())
-        dispatch(reset())
-    }
+    // function handleStudentLogout() {
+    //     dispatch(logoutStudent())
+    //     dispatch(reset())
+    // }
 
     return (
         <div>

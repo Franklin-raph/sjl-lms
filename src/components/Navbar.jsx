@@ -20,6 +20,7 @@ const Navbar = () => {
     function handleStudentLogout() {
         dispatch(logoutStudent())
         dispatch(reset())
+        // location.reload()
     }
 
     return (
@@ -28,7 +29,7 @@ const Navbar = () => {
                 <i className="ri-code-box-fill"></i>
                 <Link to='/'>Scholars</Link>
             </div>
-            <h4>Welcome Back, {studentData.user_data.first_name}</h4>
+            <h4>Welcome Back, {studentData ? studentData.user_data.first_name : ""} </h4>
             <div className=''>
                 <i className="ri-notification-4-fill"></i>
                 <button onClick={handleStudentLogout}>Logout</button>

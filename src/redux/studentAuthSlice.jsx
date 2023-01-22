@@ -26,6 +26,7 @@ export const loginStudent = createAsyncThunk(
         }
         if (response.ok) {
             localStorage.setItem('student', JSON.stringify(data))
+            location.reload()
             console.log(data);
             return { data }
         }
@@ -40,6 +41,7 @@ export const logoutStudent = createAsyncThunk(
         console.log(data);
 
         if (response.ok) {
+            location.href = '/'
             localStorage.removeItem('student')
         }
     }
