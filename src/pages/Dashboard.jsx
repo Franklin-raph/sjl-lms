@@ -12,7 +12,7 @@ const Dashboard = () => {
         if (studentData === null) {
             naviate('/')
         }
-    })
+    }, [])
 
     function handleStudentLogout() {
         dispatch(logoutStudent())

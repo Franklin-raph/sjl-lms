@@ -9,12 +9,13 @@ const Navbar = () => {
     const { studentData, isLoading, isSuccess, isError, message } = useSelector(state => state.studentAuth)
     const dispatch = useDispatch()
     const naviate = useNavigate()
+    console.log(studentData)
 
     useEffect(() => {
         if (studentData === null) {
             naviate('/')
         }
-    })
+    }, [])
 
     function handleStudentLogout() {
         dispatch(logoutStudent())
@@ -22,16 +23,17 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-light ">
-            <div>
+        <div className="nav">
+            <div className=''>
                 <i className="ri-code-box-fill"></i>
                 <Link to='/'>Scholars</Link>
             </div>
-            <div>
+            <h4>Welcome Back, {studentData.user_data.first_name}</h4>
+            <div className=''>
                 <i className="ri-notification-4-fill"></i>
                 <button onClick={handleStudentLogout}>Logout</button>
             </div>
-        </nav>
+        </div>
     )
 }
 

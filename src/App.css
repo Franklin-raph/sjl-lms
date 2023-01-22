@@ -181,6 +181,76 @@ ul {
   margin-top: 20px;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.ri-code-box-fill {
+  font-size: 40px;
+}
+
+.ri-notification-4-fill {
+  font-size: 22px;
+  color: #363636;
+}
+
+.nav div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav div button {
+  all: unset;
+  background-color: #d32752;
+  padding: 5px 14px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.sidebar {
+  width: 100%;
+  border-right: 1px solid rgb(223, 223, 223);
+  overflow-y: hidden;
+  height: 90vh;
+}
+
+.sideBarItems {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+  /* gap: 10px; */
+}
+
+.sideBarItems a {
+  all: unset;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(223, 223, 223);
+  width: 100%;
+  cursor: pointer;
+}
+
+.mainArea {
+  background-color: #DFECFF;
+  padding: 18px;
+
+}
+
 @media screen and (max-width: 992px) {
 
   #signupmodal .verifyEmailModal,
