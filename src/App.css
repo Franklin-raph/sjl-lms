@@ -246,6 +246,7 @@ ul {
 .mainArea {
   background-color: #DFECFF;
   padding: 18px;
+  /* overflow-y: scroll; */
 
 }
 

@@ -20,33 +20,33 @@ const Profile = () => {
     }, [])
 
     return (
-        <form className="bg-white p-5 mx-auto w-3/6 rounded mt-9">
+        <form className="bg-white p-5 mx-auto w-full md:w-3/4 lg:w-2/4 rounded mt-9 signUpForm">
             <h1 className="text-center text-xl">Profile Update</h1>
             <label className="block my-7">
-                <span className="block text-sm font-medium text-slate-700 pb-2">First Name</span>
-                <input type="text" value={first_name} className="rounded-md py-2 px-2 focus:outline-none text-sm w-full bg-slate-100" />
+                <span>First Name</span>
+                <input type="text" value={first_name} className="focus:outline-none" />
             </label>
             <label className="block my-7">
-                <span className="block text-sm font-medium text-slate-700 pb-2">Last Name</span>
-                <input type="text" value={last_name} className="rounded-md py-2 px-2 focus:outline-none text-sm w-full bg-slate-100" />
+                <span>Last Name</span>
+                <input type="text" value={last_name} className="focus:outline-none" />
             </label>
             <label className="block my-7">
-                <span className="block text-sm font-medium text-slate-700 pb-2">Email</span>
+                <span>Email</span>
                 <input type="text" disabled value={email} className="rounded-md py-2 px-2 hover:cursor-not-allowed focus:outline-none text-sm w-full text-slate-400 bg-slate-100" />
             </label>
             <label className="block my-7">
-                <span className="block text-sm font-medium text-slate-700 pb-2">Phone Number</span>
-                <input type="number" className="rounded-md py-2 px-2 focus:outline-none text-sm w-full bg-slate-100" />
+                <span>Phone Number</span>
+                <input type="number" className="focus:outline-none" />
             </label>
             <label className="block my-7">
-                <span className="block text-sm font-medium text-slate-700 pb-2">Github Account</span>
-                <input type="text" className="rounded-md py-2 px-2 focus:outline-none text-sm w-full bg-slate-100" />
+                <span>Github Account</span>
+                <input type="text" className="focus:outline-none" />
             </label>
             <label className="block my-7">
-                <span className="block text-sm font-medium text-slate-700 pb-2">Linkedln Profile</span>
-                <input type="text" className="rounded-md py-2 px-2 focus:outline-none text-sm w-full bg-slate-100" />
+                <span>Linkedln Profile</span>
+                <input type="text" className="focus:outline-none" />
             </label>
-            <input type="submit" value="Update" className="py-2 px-4 rounded bg-green-500 text-white" />
+            <input type="submit" value="Update" className="successBtn" />
         </form>
     )
 }

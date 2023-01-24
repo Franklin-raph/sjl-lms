@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .signUpForm label span {
+        display: block;
+        @apply text-sm font-medium text-slate-700 pb-2;
+    }
+
+    .signUpForm label input {
+        @apply rounded-md py-2 px-2 text-sm w-full bg-slate-100
+    }
+
+    .successBtn {
+        @apply py-2 px-4 rounded bg-green-500 text-white
+    }
+}
